@@ -16,7 +16,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const rent = inputElementValueId('rent');
     const clothes = inputElementValueId('clothes');
 
-    if (fodd >0) {
+    if (income < 0 && income == "") {
         alert('Input must be positive Number');
         console.log('input');
         
