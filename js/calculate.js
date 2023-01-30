@@ -1,14 +1,38 @@
-function inputElementValueId(elementId){
+function inputElementValueId(elementId) {
     const elementField = document.getElementById(elementId);
     const inputValueString = elementField.value;
-    const inputValue = parseFloat(inputValueString) ;
+    const inputValue = parseFloat(inputValueString);
 
     return inputValue;
 }
 
 
-document.getElementById('calculate-btn').addEventListener('click',function(){
+
+document.getElementById('calculate-btn').addEventListener('click', function () {
     const income = inputElementValueId('income');
-    console.log(income);
     
+
+    const food = inputElementValueId('food');
+    const rent = inputElementValueId('rent');
+    const clothes = inputElementValueId('clothes');
+
+    if (income >0) {
+        alert('Input must be positive Number');
+        console.log('input');
+        
+    } 
+    else {
+        const expense = food + rent + clothes;
+        const balance = income - expense;
+        if (expense > income) {
+            alert("Expenses cannot be more than income");
+        } else {
+            // view total expense and balance
+            document.getElementById("total-expense").innerText = expense;
+            document.getElementById("balance").innerText = balance;
+        }
+    }
+
+    
+
 })
